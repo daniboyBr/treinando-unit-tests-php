@@ -16,7 +16,7 @@ class IPFinder
     public function findIp(): string
     {
         $response = $this->httpClient->request('GET', 'https://checkip.amazonaws.com/');
-        
+
         return str_replace("\n", '', $response->getBody());
     }
 }
