@@ -20,7 +20,9 @@ class IPFinderTest extends TestCase
         $reponse->method('getBody')
             ->willReturn('127.0.0.1');
 
-        $httpClient->method('request')
+        $httpClient
+            ->expects($this->once())
+            ->method('request')
             ->willReturn($reponse);
 
 
